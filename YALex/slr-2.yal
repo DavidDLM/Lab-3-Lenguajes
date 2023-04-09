@@ -1,0 +1,38 @@
+(* Lexer para Gramática *)
+
+(* Introducir cualquier header aqui *)
+
+let plus = "+"
+let minus = "-"
+let multiplication = ""
+let division = "/"
+let left_parenthesis = "("
+let right_parenthesis = ")"
+let digit = "0|1|2|3|4|5|6|7|8|9"
+let number = "digit(digit)"
+let letter = "a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z"
+let identifier = "letter(letter|digit)"
+let assignment = "="
+let comparison = "==|!="
+let greater_than = ">"
+let less_than = "<"
+
+(* Rules to analyze the tokens *)
+rule tokens =
+    plus { print("PLUS\n") }
+    | minus { print("MINUS\n") }
+    | multiplication { print("MULTIPLICATION\n") }
+    | division { print("DIVISION\n") }
+    | left_parenthesis { print("LEFT_PARENTHESIS\n") }
+    | right_parenthesis { print("RIGHT_PARENTHESIS\n") }
+    | digit { print("DIGIT\n") }
+    | number { print("NUMBER\n") }
+    | letter { print("LETTER\n") }
+    | identifier { print("IDENTIFIER\n") }
+    | assignment { print("ASSIGNMENT\n") }
+    | comparison { print("COMPARISON\n") }
+    | greater_than { print("GREATER_THAN\n") }
+    | less_than { print("LESS_THAN\n") }
+    ; (* It is important to include this semicolon to indicate the end of the rules *)
+
+(* Introducir cualquier trailer aqui *)

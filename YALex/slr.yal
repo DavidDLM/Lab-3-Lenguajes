@@ -1,0 +1,19 @@
+(* Lexer para Gramática *)
+
+(* Introducir cualquier header aqui *)
+
+let letter = "a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z"
+let digit = "0|1|2|3|4|5|6|7|8|9"
+let identifier = "letter(letter|digit)*"
+let number = "digit(digit)*"
+
+
+rule tokens =
+    identifier	        { print("identifier\n") }   (* Cambie por una acción válida, que devuelva el token *)
+  | digit			  { print("digit\n") }
+  | letter			{ print("letter\n") }
+  | number			{ print("number\n") }
+  ; (* It is important to include this semicolon to indicate the end of the rules *)
+
+
+(* Introducir cualquier trailer aqui *)
